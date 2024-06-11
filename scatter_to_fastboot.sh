@@ -72,8 +72,7 @@ while IFS= read -r line || [ -n "$line" ]; do
     is_upgradable=$(echo "$line" | awk '{print $2}')
     fi
   fi
-done < "$scatter"
-  
+done < "$scatter"  
 if [ "$metadata" = "true" ]; then
   echo "fastboot erase metadata" >> "$scatterdir"/flash_all_except_data_storage.sh
   fi
