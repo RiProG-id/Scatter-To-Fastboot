@@ -53,7 +53,7 @@ while IFS= read -r line || [ -n "$line" ]; do
     is_upgradable=$(echo "$line" | awk '{print $2}')
     fi
   fi
-done < /storage/emulated/0/Download/Telegram/MT6765_Android_scatter.txt
+done < "$scatter"
   
 if [ "$metadata" = "true" ]; then
   echo "fastboot erase metadata" >> "$scatterdir"/flash_all_except_data_storage.sh
@@ -66,7 +66,8 @@ if [ "$boot_a" = "true" ]; then
   echo "fastboot --set-active=a" >> "$scatterdir"/flash_all_except_data_storage.sh
 fi
 dummy2='fastboot oem cdms
-fastboot reboot'
+fastboot reboot
+echo "Done"'
 echo "$dummy2" >> "$scatterdir"/flash_all.sh
 echo "$dummy2" >> "$scatterdir"/flash_all_except_data_storage.sh
 echo ""
