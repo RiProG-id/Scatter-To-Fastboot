@@ -10,7 +10,7 @@ Scatter To Fastboot adalah skrip shell sederhana yang mengonversi berkas scatter
 2. Jalankan skrip dengan perintah berikut:
 
    ```bash
-   sh scatter_to_fastboot.sh
+   sh emmc.sh / sh ufs.sh
    ```
 
 3. Ikuti instruksi yang muncul di layar untuk memasukkan lokasi firmware Anda.
